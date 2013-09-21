@@ -1,0 +1,19 @@
+<h1>PROJECT BASE</h1>
+<br>
+
+<div>
+  <ul>
+  {% for menu in menu %}
+    <li>
+      <a href="{{ menu.get_absolute_url }}">{{ menu }}</a>
+      <ul>
+      {% for sub_menu in menu.pai.all %}
+        <li>
+          <a href="{{ sub_menu.get_absolute_url }}">{{ sub_menu }}</a>
+        </li>    
+      {% endfor %}
+      </ul>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
