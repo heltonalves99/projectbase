@@ -126,6 +126,7 @@ INSTALLED_APPS = (
     'south',
 
     'apps.content',
+    'apps.contact',
 )
 
 # A sample logging configuration. The only tangible logging

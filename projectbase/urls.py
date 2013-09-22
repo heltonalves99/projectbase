@@ -11,6 +11,7 @@ urlpatterns = patterns('',
     (r'^ckeditor/', include('ckeditor.urls')),
 
     url(r'^$', Home.as_view()),
+    url(r'^contact/', include('apps.contact.urls')),
     url(r'', include('apps.content.urls')),
 )
 
