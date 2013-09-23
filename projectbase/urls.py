@@ -12,6 +12,7 @@ urlpatterns = patterns('',
 
     url(r'^$', Home.as_view()),
     url(r'^contact/', include('apps.contact.urls')),
+    (r'^fileupload/', include('apps.fileupload.urls')),
     url(r'', include('apps.content.urls')),
 )
 

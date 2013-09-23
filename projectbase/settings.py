@@ -64,7 +64,7 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
@@ -73,7 +73,6 @@ STATIC_URL = '/static/'
 # Additional locations of static files
 STATICFILES_DIRS = (
     os.path.join(PUBLIC_DIR, 'static'),
-    '/static/'
 )
 
 # List of finder classes that know how to find static files in
@@ -127,6 +126,8 @@ INSTALLED_APPS = (
 
     'apps.content',
     'apps.contact',
+    'apps.photo',
+    'apps.fileupload',
 )
 
 # A sample logging configuration. The only tangible logging
