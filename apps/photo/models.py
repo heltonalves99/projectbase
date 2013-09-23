@@ -17,6 +17,16 @@ class Gallery(models.Model):
         verbose_name_plural = u"Galeria de fotos"
         ordering = ["-date"]
 
+    @models.permalink
+    def get_absolute_url(self):
+        args = [
+            self.date.strftime("%Y"),
+            self.date.strftime("%m"),
+            self.date.strftime("%d"),
+            self.slug
+        ]
+        return ('gallery_detail', args)
+
 
 class Image(models.Model):
     gallery = models.ForeignKey("Gallery")

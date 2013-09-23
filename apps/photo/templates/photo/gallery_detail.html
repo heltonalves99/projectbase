@@ -1,0 +1,11 @@
+<p>{{ object.date }}<p>
+<h2>{{ object.title }}</h2>
+
+<div>
+  <ul>
+    {% for item in object.image_set.all %}
+      <li>{{ item.image }}</li>
+    {% endfor %}
+  </ul>
+</div>
+
