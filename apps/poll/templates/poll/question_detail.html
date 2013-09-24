@@ -1,16 +1,25 @@
 <h1>{{ object }}</h1>
 
-<form action="{% url 'question_detail' object.id %}" method="post">
+<form action="{% url 'poll:question_vote' object.id %}" method="post">
   {% csrf_token %}
   <fieldset>
     <ul>
       {% for alt in object.pergunta.all %}
         <li>
+          <label>
           <input type="radio" name="alternative" value="{{ alt.id }}" />
-          <label>{{ alt }}</label>  
+          {{ alt }}</label>  
         </li>
       {% endfor %}
     </ul>
     <input type="submit" value="Votar" />
   </fieldset>
 </form>
+
+{% if messages %}
+<ul class="messages">
+  {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
