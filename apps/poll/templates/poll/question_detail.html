@@ -1,0 +1,16 @@
+<h1>{{ object }}</h1>
+
+<form action="{% url 'question_detail' object.id %}" method="post">
+  {% csrf_token %}
+  <fieldset>
+    <ul>
+      {% for alt in object.pergunta.all %}
+        <li>
+          <input type="radio" name="alternative" value="{{ alt.id }}" />
+          <label>{{ alt }}</label>  
+        </li>
+      {% endfor %}
+    </ul>
+    <input type="submit" value="Votar" />
+  </fieldset>
+</form>
