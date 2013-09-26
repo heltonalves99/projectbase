@@ -129,6 +129,7 @@ INSTALLED_APPS = (
     'apps.photo',
     'apps.fileupload',
     'apps.poll',
+    'apps.news',
 )
 
 # A sample logging configuration. The only tangible logging

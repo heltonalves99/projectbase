@@ -16,6 +16,7 @@ class QuestionListView(ListView):
 class QuestionDetailView(DetailView):
     model = Question
 
+
 class QuestionRedirectView(RedirectView):
     def post(self, request, *args, **kwargs):
         alternative = Alternative.objects.get(id=request.POST['alternative'])
