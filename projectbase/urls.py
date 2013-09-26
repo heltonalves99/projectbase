@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     url(r'^contact/', include('apps.contact.urls')),
     url(r'^gallery/', include('apps.photo.urls')),
     (r'^fileupload/', include('apps.fileupload.urls')),
+    (r'^news/', include('apps.news.urls')),
     url(r'^poll/', include('apps.poll.urls', namespace="poll")),
     url(r'', include('apps.content.urls')),
 )

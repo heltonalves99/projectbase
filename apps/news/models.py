@@ -22,11 +22,12 @@ class News(models.Model):
         verbose_name_plural = u"Notícias"
         ordering = ('-date',)
 
+    @models.permalink
     def get_absolute_url(self):
         args = [
-            self.data.strftime("%Y"),
-            self.data.strftime("%m"),
-            self.data.strftime("%d"),
+            self.date.strftime("%Y"),
+            self.date.strftime("%m"),
+            self.date.strftime("%d"),
             self.slug
         ]
-        return ('list_news', args)
+        return ('date_detail_news', args)
